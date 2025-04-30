@@ -11,11 +11,14 @@ function ProductList() {
   console.log(loading);
 
   return (
-    <div className="flex gap-24 flex-wrap">
-      {loading && <h3>LOADING.....</h3>}
-      {error && <h2>Error is - {error}</h2>}
-       {dataCarrierObject.map((product)=>
-        <ProductCard product={ product } key={product.id}/>)} 
+    <div className="mx-auto mt-9">
+      <div className="flex justify-center flex-wrap gap-8 max-w-[100rem] mx-auto">
+        {loading && <h3>LOADING.....</h3>}
+        {error && <h2>Error is - {error}</h2>}
+        {dataCarrierObject.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </div>
     </div>
   );
 }
