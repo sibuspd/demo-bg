@@ -1,4 +1,4 @@
-// import "./index.css";
+import "./index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
@@ -9,6 +9,7 @@ import ProductList from "./components/ProductList.jsx";
 import Clothing from "./components/Clothing.jsx";
 import Electronics from "./components/Electronics.jsx";
 import Furniture from "./components/Furniture.jsx";
+import Toys from "./components/Toys.jsx";
 import { Suspense } from "react";
 import Spinner from "./components/Spinner.jsx";
 import shopStore from "./utils/shopStore.js";
