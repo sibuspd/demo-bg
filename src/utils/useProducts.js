@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function useProducts(url) {
 
-    const [ dataCarrierObject, setDataCarrierObject] = useState({}); // Sets the data payload to an empty object 
+    const [ dataCarrierObject, setDataCarrierObject] = useState([]); // Sets the data payload to an empty array 
     const [ error, setError] = useState(null); // In case if error occurs
     const [ loading, setLoading] = useState(true); // Loading becomes false when data is fetched 
 
@@ -30,5 +30,5 @@ export default function useProducts(url) {
 
     }, [url]); // Doesn't get re-invoked unless the API URL changes from cross-origin
 
-    return { dataCarrierObject, error, loading};
+    return { dataCarrierObject, error, loading };
 }; 
