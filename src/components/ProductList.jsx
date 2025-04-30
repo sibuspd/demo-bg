@@ -11,11 +11,10 @@ function ProductList() {
 
   return (
     <div>
-      {/* {loading && <h3>LOADING.....</h3>}
-      {error && <h2>Error is - {error}</h2>} */}
-      {/* {products.map((product)=>
-        <div key={product.id}>{product}</div>)} */}
-        Product Cards
+      {loading && <h3>LOADING.....</h3>}
+      {error && <h2>Error is - {error}</h2>}
+       {dataCarrierObject.map((product)=>
+        <div key={product.id}>{product.title}</div>)}
     </div>
   );
 }
