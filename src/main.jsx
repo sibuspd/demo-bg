@@ -2,7 +2,7 @@ import "./index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import NotFound from "./components/NotFound.jsx";
 import ProductList from "./components/ProductList.jsx";
@@ -28,38 +28,40 @@ const appRouter = createBrowserRouter([
             <ProductList />
           </Suspense>
         ),
-      },
-      {
-        path: "/clothing",
-        element: (
-          <Suspense fallback={<Spinner />}>
-            <Clothing />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/electronics",
-        element: (
-          <Suspense fallback={<Spinner />}>
-            <Electronics />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/furniture",
-        element: (
-          <Suspense fallback={<Spinner />}>
-            <Furniture />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/toys",
-        element: (
-          <Suspense fallback={<Spinner />}>
-            <Toys />
-          </Suspense>
-        ),
+        children: [
+          {
+            path: "/clothing",
+            element: (
+              <Suspense fallback={<Spinner />}>
+                <Clothing />
+              </Suspense>
+            ),
+          },
+          {
+            path: "/electronics",
+            element: (
+              <Suspense fallback={<Spinner />}>
+                <Electronics />
+              </Suspense>
+            ),
+          },
+          {
+            path: "/furniture",
+            element: (
+              <Suspense fallback={<Spinner />}>
+                <Furniture />
+              </Suspense>
+            ),
+          },
+          {
+            path: "/toys",
+            element: (
+              <Suspense fallback={<Spinner />}>
+                <Toys />
+              </Suspense>
+            ),
+          },
+        ],
       },
     ],
   },
