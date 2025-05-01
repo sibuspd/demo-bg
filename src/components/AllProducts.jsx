@@ -23,7 +23,7 @@ function AllProducts() {
   return (
 
       <div className="flex justify-center flex-wrap gap-8 max-w-[100rem] mx-auto">
-        {loading && <h3>LOADING.....</h3>}
+        {loading && <h3><span className="loading loading-ring loading-xl"></span></h3>}
         {error && <h2>Error is - {error}</h2>}
         {filteredProducts.map((product) => (
           <ProductCard product={product} key={product.id} />
