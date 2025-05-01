@@ -5,6 +5,7 @@ import ProductCard from "./ProductCard"; // Component where each Product will be
 import SearchProduct from "./SearchProduct";
 import { useSelector } from "react-redux";
 
+
 function ProductList() {
   const { dataCarrierObject, error, loading } = useProducts(product_api_url);
 
@@ -33,6 +34,7 @@ function ProductList() {
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
+
     </div>
   );
 }
