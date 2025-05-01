@@ -5,7 +5,8 @@ import { Suspense } from "react";
 import { Outlet } from "react-router";
 import Spinner from "./components/Spinner";
 import useProducts from "./utils/useProducts"; // Custom hook to fetch products data
-import { product_api_url } from "./utils/constants"; // URL provided by BharatGo
+import { product_api_url } from "./utils/constants"; // URL provided by BharatGo\
+import ProductModal from "./components/ProductModal"; // Imported the Modal Box 
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <Suspense fallback={<Spinner/>}>
           <Outlet context={{ dataCarrierObject, error, loading} }/>
         </Suspense>
+
+        <ProductModal/>
       </main>
       <Footer />
     </div>

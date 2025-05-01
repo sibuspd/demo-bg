@@ -1,10 +1,23 @@
 import React from "react";
+import { openModal } from "../utils/modalSlice"; //  Action imported to open the modal on clicking card
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux"; // Importing useSelector to access the Redux store
 
 function ProductCard({ product }) {
   // Receives each product details and displays the card
   // console.log(product);
+
+  const dispatch = useDispatch();
+  const status = useSelector((state) => state.modal.isOpen);
+
+  function handleClick(){ // Function that opens the modal
+    dispatch(openModal(product)); // product is passed as payload to action - "openModal"
+    console.log(status);
+  }
+
   return (
-    <div className="flex flex-col w-56 h-64 rounded-md overflow-hidden">
+    <div className="flex flex-col w-56 h-64 rounded-md overflow-hidden cursor-pointer"
+    onClick={handleClick}>
       <img
         src={product.image}
         alt="image of the product"
