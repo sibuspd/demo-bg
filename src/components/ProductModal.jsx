@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../utils/modalSlice";
-import { Button } from "daisyui";
 
 
 // THE MODAL BOX THAT TAKES STATUS INFORMATION FROM MODAL SLICE
@@ -15,7 +14,7 @@ export default function ProductModal(){
     return (
         <div>
             Modal Box
-            <Button circle onClick={dispatch(closeModal())}> <Icon name="feather:x" /> </Button>
+            <button className="btn btn-circle btn-sm" onClick={() => dispatch(closeModal())}>X</button>
         </div>
     )
 }
