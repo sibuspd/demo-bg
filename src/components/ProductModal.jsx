@@ -1,11 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeModal } from "../utils/modalSlice";
+import { addProduct, removeProduct} from "../utils/cartSlice"
 
 // THE MODAL BOX THAT TAKES STATUS INFORMATION FROM MODAL SLICE
 export default function ProductModal() {
   const dispatch = useDispatch();
   const { isOpen, product } = useSelector((state) => state.modal); // Name of the slice is modal in modalSlice.js
+
+  const cartItem = useSelector((state) => state.shopCart.items.find( (item) => item.id === product.id)) // Finds the product card that has been clicked
+  const quantity = cartItem?cartItem.quantity : 0 ;
 
   if (!isOpen) return null; // This means Modal is still not open
 
@@ -25,9 +29,11 @@ export default function ProductModal() {
                 <div className="flex flex-col ml-4">
                     <h5 className="text-sm font-bold overflow-hidden text-ellipsis">{product.title}</h5>
                     <div className="flex items-center mt-2">
-                        <button className="btn btn-xs btn-outline bg-red-300 rounded-s-2xl text-lg">-</button>
-                        <span className="w-8 text-center">1</span>
-                        <button className="btn btn-xs btn-outline bg-green-200 rounded-e-2xl text-lg">+</button>
+                        <button className="btn btn-xs btn-outline bg-red-300 rounded-s-2xl text-lg"
+                        onClick={()=> dispatch(removeProduct(product))}>-</button>
+                        <span className="w-8 text-center">{quantity}</span>
+                        <button className="btn btn-xs btn-outline bg-green-200 rounded-e-2xl text-lg"
+                        onClick={()=> dispatch(addProduct(product))}>+</button>
                     </div>
                 </div>
             </div>
