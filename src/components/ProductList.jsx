@@ -20,7 +20,7 @@ function ProductList() {
   // console.log(filteredProducts);
 
   return (
-    <div className="mx-auto mt-9">
+    <div className="mx-auto mt-9 lg:mx-5">
 
       <div className="flex justify-center mb-8 mx-auto max-w-[100rem]">
         <SearchProduct/>

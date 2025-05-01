@@ -10,8 +10,8 @@ function ProductCard({ product }) {
         alt="image of the product"
         className="w-full h-44 object-fit border-2 shadow-sm rounded-md"
       />
-      <div className="flex gap-2 p-2 justify-between">
-        <h2 className="text-sm font-small overflow-hidden text-ellipsis w-2/3">{product.title}</h2>
+      <div className="flex gap-2 p-2 justify-between md:h-20">
+        <h2 className="md:text-sm font-small overflow-hidden text-ellipsis w-2/3">{product.title}</h2>
         <h1 className="text-md font-semibold">₹ {(product.price*84.57).toFixed(0)}</h1>
       </div>
     </div>
