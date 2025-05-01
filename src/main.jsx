@@ -13,6 +13,7 @@ import Toys from "./components/Toys.jsx";
 import { Suspense } from "react";
 import Spinner from "./components/Spinner.jsx";
 import shopStore from "./utils/shopStore.js";
+import AllProducts from "./components/AllProducts.jsx";
 
 // Router Configuration
 const appRouter = createBrowserRouter([
@@ -22,15 +23,17 @@ const appRouter = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        path: "/",
-        element: (
-          <Suspense fallback={<Spinner />}>
-            <ProductList />
-          </Suspense>
-        ),
+        path: "",
+        element: <ProductList />,
         children: [
           {
-            path: "/clothing",
+            index: true,
+            element: (<Suspense fallback={<Spinner/>}>
+              <AllProducts/>
+            </Suspense>),
+          },
+          {
+            path: "clothing",
             element: (
               <Suspense fallback={<Spinner />}>
                 <Clothing />
@@ -38,7 +41,7 @@ const appRouter = createBrowserRouter([
             ),
           },
           {
-            path: "/electronics",
+            path: "electronics",
             element: (
               <Suspense fallback={<Spinner />}>
                 <Electronics />
@@ -46,7 +49,7 @@ const appRouter = createBrowserRouter([
             ),
           },
           {
-            path: "/furniture",
+            path: "furniture",
             element: (
               <Suspense fallback={<Spinner />}>
                 <Furniture />
@@ -54,7 +57,7 @@ const appRouter = createBrowserRouter([
             ),
           },
           {
-            path: "/toys",
+            path: "toys",
             element: (
               <Suspense fallback={<Spinner />}>
                 <Toys />
