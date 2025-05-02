@@ -6,7 +6,7 @@ import { addProduct, removeProduct} from "../utils/cartSlice"
 // THE MODAL BOX THAT TAKES STATUS INFORMATION FROM MODAL SLICE
 export default function MyOrderModal() {
   const dispatch = useDispatch();
-  const { isOpen, product } = useSelector((state) => state.modal); // Name of the slice is modal in modalSlice.js
+  const { isOpen } = useSelector((state) => state.modal); // Name of the slice is modal in modalSlice.js
 
   const cartItems = useSelector((state) => state.shopCart.items); // Loads the Cart list of products
   
