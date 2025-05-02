@@ -6,7 +6,8 @@ import { Outlet } from "react-router";
 import Spinner from "./components/Spinner";
 import useProducts from "./utils/useProducts"; // Custom hook to fetch products data
 import { product_api_url } from "./utils/constants"; // URL provided by BharatGo\
-import MyOrderModal from "./components/MyOrderModal"; // Imported the Modal Box 
+import MyOrderModal from "./components/MyOrderModal"; // Imported the Modal Box
+import ProductModal from "./components/ProductModal"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Outlet context={{ dataCarrierObject, error, loading} }/>
         </Suspense>
 
+        <ProductModal/>
         <MyOrderModal/>
       </main>
       <Footer />

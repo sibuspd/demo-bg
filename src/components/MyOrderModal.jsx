@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { closeModal } from "../utils/modalSlice";
+import { closeMyOrderModal } from "../utils/myOrderModalSlice";
 import { addProduct, removeProduct} from "../utils/cartSlice"
 
 // THE MODAL BOX THAT TAKES STATUS INFORMATION FROM MODAL SLICE
 export default function MyOrderModal() {
   const dispatch = useDispatch();
-  const { isOpen } = useSelector((state) => state.modal); // Name of the slice is modal in modalSlice.js
+  const { isOpen } = useSelector((state) => state.myOrderModal); // Name of the slice is modal in modalSlice.js
 
   const cartItems = useSelector((state) => state.shopCart.items); // Loads the Cart list of products
   
@@ -20,7 +20,7 @@ export default function MyOrderModal() {
         <div className="bg-white w-full max-w-[400px] min-h-[200px] shadow-lg rounded-md p-4 relative">
             <button // This is the close Button of the Modal
             className="btn btn-circle btn-sm absolute right-2 top-2"
-            onClick={() => dispatch(closeModal())}>X</button>
+            onClick={() => dispatch(closeMyOrderModal())}>X</button>
 
             {cartItems.length === 0?(
                 <p className="text-center">Your cart is empty</p>
