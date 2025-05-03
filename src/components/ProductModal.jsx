@@ -19,7 +19,7 @@ export default function ProductModal() {
           <h3 className="text-md font-bold text-center">{product.title}</h3>
           <img src={product?.image} className="w-40 h-40 object-fit mx-auto mt-4 rounded-md"/>
           <p className="text-2xl font-bold text-center mt-4">₹ {(product.price * 84.57).toFixed(0)}</p>
-          <p className="mt-4">{product.description}</p>
+          <p className="mt-4 overflow-y-auto max-h-24 text-sm">{product.description}</p>
         </div>
       </div>
     </div>
