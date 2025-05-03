@@ -13,7 +13,6 @@ function Header() {
             </div>
             
             <div className='flex gap-2'>
-                Current user
                 <CartItems/>
             </div>
      

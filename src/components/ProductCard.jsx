@@ -20,7 +20,7 @@ function ProductCard({ product }) {
     onClick={() => dispatch(openModal(product))}>
 
       <div className="absolute right-3 top-3">
-        <button className="btn btn-xs btn-outline-none rounded-lg text-xl p-4 bg-gray-700 bg-opacity-65"
+        <button className="btn btn-xs btn-outline-none rounded-lg text-xl p-4 bg-gray-700 bg-opacity-65 text-white"
         onClick={(e) => { e.stopPropagation(); dispatch(addProduct(product)); dispatch(openMyOrderModal());
         }}>+</button> 
       </div>
