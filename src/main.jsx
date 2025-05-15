@@ -14,6 +14,10 @@ import { Suspense } from "react";
 import Spinner from "./components/Spinner.jsx";
 import shopStore from "./utils/shopStore.js";
 import AllProducts from "./components/AllProducts.jsx";
+import MyOrders from "./components/MyOrders.jsx";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import MyAccount from "./components/MyAccount.jsx";
 
 // Router Configuration
 const appRouter = createBrowserRouter([
@@ -28,9 +32,11 @@ const appRouter = createBrowserRouter([
         children: [
           {
             index: true,
-            element: (<Suspense fallback={<Spinner/>}>
-              <AllProducts/>
-            </Suspense>),
+            element: (
+              <Suspense fallback={<Spinner />}>
+                <AllProducts />
+              </Suspense>
+            ),
           },
           {
             path: "clothing",
@@ -68,6 +74,26 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "my-orders",
+    element: (
+      <Suspense fallback={<Spinner />}>
+        <Header/>
+        <MyOrders />
+        <Footer/>
+      </Suspense>
+    ),
+  },
+    {
+    path: "my-account",
+    element: (
+      <Suspense fallback={<Spinner />}>
+        <Header/>
+        <MyAccount/>
+        <Footer/>
+      </Suspense>
+    ),
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
