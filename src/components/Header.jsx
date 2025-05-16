@@ -17,7 +17,7 @@ function Header() {
       </div>
 
       <div className="flex gap-4 font-medium text-sm">
-        <h5 className="font-thin">currentuser@test.com</h5>
+        <h5 className="font-thin">sibuspd@gmail.com</h5>
         <Link to={"/my-orders"}>My Orders</Link>
         <Link to={"/my-account"}>MyAccount</Link>
         <CartItems />
