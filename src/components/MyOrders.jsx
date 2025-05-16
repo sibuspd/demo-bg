@@ -39,10 +39,11 @@ function MyOrders() {
       )}
 
       {/* Payment Proceeds */}
+      {cartItems.length > 0 &&
       <div className="mt-8 flex justify-start">
         <button className="bg-blue-950 hover:bg-green-700 text-white py-2 px-4 rounded-full shadow-md transition-all font-medium text-sm"
         onClick={()=>alert("Payment feature upcoming")}>Proceed to Payment</button>
-      </div>
+      </div>}
     </div>
   );
 }
